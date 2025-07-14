@@ -33,8 +33,11 @@ jobs:
         run: |
           python make.py
 
-      - name: Upload PDF (uncompressed)
-        uses: actions/upload-pages-artifact@v3
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: github.ref == 'refs/heads/main'
         with:
-          name: notebook.pdf
-          path: notebook.pdf
+          files: notebook.pdf
+          draft: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
