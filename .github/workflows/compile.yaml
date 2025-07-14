@@ -19,11 +19,9 @@ jobs:
           python-version: "3.x"
 
       - name: Install Typst
-        run: |
-          wget https://github.com/typst/typst/releases/latest/download/typst-linux-x86_64.tar.gz
-          tar -xzf typst-linux-x86_64.tar.gz
-          sudo mv typst /usr/local/bin/
-          typst --version
+        uses: typst/setup-typst@v2
+        with:
+          version: latest
 
       - name: Compile document
         run: |
