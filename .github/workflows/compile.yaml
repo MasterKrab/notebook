@@ -39,5 +39,7 @@ jobs:
         with:
           files: notebook.pdf
           draft: false
+          tag_name: "v$(date +%Y.%m.%d)"
+          name: "Handbook $(date +%Y-%m-%d)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
