@@ -33,8 +33,8 @@ jobs:
         run: |
           python make.py
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload PDF (uncompressed)
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: compiled-document
+          name: notebook.pdf
           path: notebook.pdf
